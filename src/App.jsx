@@ -13,6 +13,20 @@ const GlobalStyles = createGlobalStyle`
   font-size: 62.5%;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+background: #2F9FF81A;
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+background: #2f9ef84b;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -39,15 +53,19 @@ img {
 }
 `;
 
-const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
+const MainWrapper = styled.div`
+  position: fixed;
+  top: 76px;
+  margin-top: 8px;
+  bottom: 0;
+  left: 305px;
+  /* right: 364px; */
+  right: 344px;
+  overflow-y: auto;
 
-const BodyWrapper = styled.div`
-  display: flex;
-  gap: 45px;
+  main {
+    width: calc(100% - 10px);
+  }
 `;
 
 const theme = {
@@ -64,27 +82,24 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
+      <Header />
+      <Navigation />
 
-      <AppWrapper>
-        <Header />
+      <MainWrapper>
+        <Routes>
+          <Route path="/" element={<Main />}>
+            {navigation.map((item, itemIndex) => {
+              !itemIndex ? (
+                <Route index element={<Main />}></Route>
+              ) : (
+                <Route path={item.path} element={<Main />}></Route>
+              );
+            })}
+          </Route>
+        </Routes>
+      </MainWrapper>
 
-        <BodyWrapper>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Main />}>
-              {navigation.map((item, itemIndex) => {
-                !itemIndex ? (
-                  <Route index element={<Main />}></Route>
-                ) : (
-                  <Route path={item.path} element={<Main />}></Route>
-                );
-              })}
-            </Route>
-          </Routes>
-
-          <Aside />
-        </BodyWrapper>
-      </AppWrapper>
+      <Aside />
     </ThemeProvider>
   );
 }

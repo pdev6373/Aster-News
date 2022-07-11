@@ -18,6 +18,6 @@ export const LargeHeading = styled.h2`
 export const MediumHeading = styled(LargeHeading)`
   font-size: 17px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 24px;
   margin-bottom: ${({ mb }) => mb};
 `;

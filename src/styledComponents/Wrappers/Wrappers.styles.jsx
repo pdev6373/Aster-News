@@ -11,12 +11,17 @@ export const TopNewsWrapper = styled.section`
 `;
 
 export const NewsWrapper = styled(TopNewsWrapper)`
+  flex-direction: column;
+  gap: 8px;
   padding: 17px 17.28px 13px 23.37px;
+  width: ${({ width }) => width};
 `;
 
 export const FlexWrapper = styled.div`
   display: flex;
   flex-direction: ${({ direction }) => direction};
+  align-items: ${({ align }) => align};
+  justify-content: ${({ justify }) => justify};
   gap: ${({ gap }) => gap};
   margin-inline: ${({ minline }) => minline};
 `;

@@ -16,8 +16,13 @@ const AppHeader = styled.header`
   display: flex;
   background: #f4f9f8;
   justify-content: space-between;
-  padding-block: 15px 23px;
+  /* height: 84px; */
+  height: 76px;
+  max-height: 84px;
+  /* padding-block: 15px 23px; */
+  padding-block: 15px;
   gap: 45px;
+  box-shadow: 0px 2px 20px 0px #0000000a;
 `;
 
 const LogoWrapper = styled.div`
@@ -135,7 +140,7 @@ export const Header = () => {
           display: "flex",
           justifyContent: "flex-end",
           alignItems: "center",
-          width: "285px",
+          width: "319px",
           paddingRight: "34px",
         }}
       >
