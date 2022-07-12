@@ -1,21 +1,12 @@
+import { AsideComponent } from "./Aside.styles";
 import { NewsWrapper } from "../../styledComponents/Wrappers/Wrappers.styles";
 
 export const Aside = () => {
   return (
-    <aside
-      style={{
-        position: "fixed",
-        top: "76px",
-        marginTop: "8px",
-        right: "0",
-        width: "319px",
-        height: "100vh",
-        overflowY: "auto",
-      }}
-    >
+    <AsideComponent>
       <div
         style={{
-          width: "calc(100% - 34px)",
+          width: "calc(100% - 10px)",
         }}
       >
         <NewsWrapper>Hello</NewsWrapper>
@@ -80,6 +71,6 @@ export const Aside = () => {
         <NewsWrapper>Hello</NewsWrapper>
         <NewsWrapper>Hello</NewsWrapper>
       </div>
-    </aside>
+    </AsideComponent>
   );
 };

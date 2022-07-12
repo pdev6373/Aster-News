@@ -6,8 +6,26 @@ export const Nav = styled.nav`
   top: 76px;
   bottom: 0;
   margin-top: 8px;
-  overflow-y: auto;
   width: 280px;
+  padding-right: 10px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    visibility: hidden;
+    border-right: 4px transparent solid;
+    border-left: none;
+    background-clip: padding-box;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      visibility: visible;
+    }
+  }
 `;
 
 export const Ul = styled.ul`

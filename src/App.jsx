@@ -18,13 +18,19 @@ const GlobalStyles = createGlobalStyle`
 }
 
 ::-webkit-scrollbar-track {
-background: #2F9FF81A;
-border-radius: 10px;
+  margin-block: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-background: #2f9ef84b;
+  background-color: #2f9ef84b;
+
+  border-left: 3px transparent solid;
+  background-clip: padding-box;
+  
+  &:hover {
+    background-color: #2f9ef88f;
+  }
 }
 
 * {
@@ -55,12 +61,14 @@ img {
 
 const MainWrapper = styled.div`
   position: fixed;
-  top: 76px;
+  /* top: 76px; */
+  top: 0;
+  padding-top: 76px;
   margin-top: 8px;
   bottom: 0;
+  right: 0;
+  padding-right: 344px;
   left: 305px;
-  /* right: 364px; */
-  right: 344px;
   overflow-y: auto;
 
   main {

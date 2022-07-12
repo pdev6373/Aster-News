@@ -8,6 +8,8 @@ import expand from "../../assets/expand.svg";
 
 const AppHeader = styled.header`
   position: sticky;
+  /* width: calc(100% - 20px); */
+  /* margin-inline: auto; */
   width: 100%;
   top: 0;
   left: 0;
@@ -22,7 +24,7 @@ const AppHeader = styled.header`
   /* padding-block: 15px 23px; */
   padding-block: 15px;
   gap: 45px;
-  box-shadow: 0px 2px 20px 0px #0000000a;
+  /* box-shadow: 0px 2px 20px 0px #0000000a; */
 `;
 
 const LogoWrapper = styled.div`
